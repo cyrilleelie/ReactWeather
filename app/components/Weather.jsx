@@ -6,7 +6,7 @@ var openWeatherMap = require('openWeatherMap');
 var Weather = React.createClass({
   getDefaultProps: function() {
     return {
-      title: 'Weather Component'
+      title: 'Get Weather'
     };
   },
   getInitialState: function() {
@@ -42,7 +42,7 @@ var Weather = React.createClass({
 
     function renderMessage () {
       if (isLoading) {
-        return <h3>Fetching weather...</h3>;
+        return <h3 className="text-center">Fetching weather...</h3>;
       } else if (temp && city) {
         return <WeatherMessage city={city} temp={temp}/>;
       }
@@ -50,7 +50,7 @@ var Weather = React.createClass({
 
     return (
       <div>
-        <h3>{title}</h3>
+        <h1 className="text-center">{title}</h1>
         <WeatherForm onSearch={this.handleSearch}/>
         {renderMessage()}
       </div>
